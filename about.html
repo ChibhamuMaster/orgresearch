@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2em;
+        }
+        .header {
+            background-color: #ff7b00;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            border-radius: 8px;
+            border-bottom: 2px solid #ff5000;
+        }
+        .main-content {
+            background-color: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            margin-top: 1em;
+            border-bottom: 2px solid #ff5000;
+        }
+        .footer {
+            background-color: #ff5000;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 1em;
+        }
+        .back-btn {
+            background-color: #020a79;
+            color: white;
+            border: none;
+            padding: 0.5em;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>About Us</h1>
+        </div>
+        <div class="main-content">
+            <p onmouseover="this.style.color='#ff7b00';" onmouseout="this.style.color='';">We are a team of researchers with expertise in various fields, including business, education, healthcare, social sciences, and technology. We have a passion for helping others to develop high-quality research proposals that meet the requirements of their funding agencies or academic institutions.</p>
+            <p onmouseover="this.style.color='#ff7b00';" onmouseout="this.style.color='';">We understand that developing a research proposal can be a daunting task, especially for those who are new to research or who have limited experience in writing proposals. That is why we have created this consultancy service to provide expert advice and guidance to help you to develop a high-quality research proposal that meets your needs.</p>
+            <p onmouseover="this.style.color='#ff7b00';" onmouseout="this.style.color='';">Our consultancy services are designed to be flexible and tailored to your specific needs. We can provide support at any stage of the research proposal development process, from conceptualization to final submission. We also offer expedited services if you need support quickly.</p>
+            <textarea id="thoughtsTextarea" placeholder="Enter your thoughts here..." style="width: 100%; height: 100px; margin-top: 1em;"></textarea>
+            <button onclick="sendThoughts()" style="margin-top: 1em; background-color: #020a79; color: white; padding: 0.5em 1em; border: none; border-radius: 8px; cursor: pointer;" onmouseover="this.style.backgroundColor='#ff7b00';" onmouseout="this.style.backgroundColor='#020a79';">
+                <img src="mail.png" alt="Send" style="width: 20px; height: 20px; vertical-align: middle;"/>
+            </button>
+            <script>
+                function sendThoughts() {
+                    const thoughts = document.getElementById('thoughtsTextarea').value;
+                    const link = `mailto:chibhamubenjuniortakunda@gmail.com?subject=Thoughts from Online Research Methods Consultancy Service&body=${encodeURIComponent(thoughts)}`;
+                    window.location.href = link;
+                }
+            </script>
+        </div>
+        <div class="additional-content">
+            <p>Our team is committed to providing the highest quality of service and support. We take pride in our ability to deliver tailored solutions that meet the unique needs of each client.</p>
+            <p>Our consultancy services include:</p>
+            <ul>
+                <li>Research proposal development and review</li>
+                <li>Methodology design and analysis</li>
+                <li>Data collection and management</li>
+                <li>Statistical analysis and interpretation</li>
+                <li>Report writing and presentation</li>
+            </ul>
+            <p>Feel free to contact us for a consultation to discuss your research needs and how we can assist you in achieving your research objectives.</p>
+        </div>
+        <div class="footer">
+            <button class="back-btn" onclick="window.location.href='index.html'">Back to Home</button>
+        </div>
+    </div>
+</body>
+</html>
+

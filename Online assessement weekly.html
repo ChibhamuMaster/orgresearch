@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Methods Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('hd wall.jpeg') no-repeat center/cover fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: block;
+            
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question label {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .answers {
+            margin-left: 20px;
+        }
+
+        .answer {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer input {
+            margin-right: 10px;
+        }
+
+        .timer {
+            font-size: 24px;
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .result.correct {
+            color: green;
+        }
+
+        .result.incorrect {
+            color: red;
+        }
+
+        .submit-btn, .start-btn, .restart-btn, .home-btn {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover, .start-btn:hover, .restart-btn:hover, .home-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" id="startContainer">
+    <h1>Research Methods Test</h1>
+    <div>
+        <label for="studentName">Enter your name:</label><br>
+        <input type="text" id="studentName" placeholder="Your Name"><br>
+        <button class="start-btn" onclick="startQuiz()">Start Test</button>
+    </div>
+</div>
+
+<div class="container hidden" id="quizContainer">
+    <h1>Research Methods Test</h1>
+    <div class="timer" id="timer">Time Left: 60:00</div>
+
+    <form id="quizForm">
+        <div class="question">
+            <label>1. What is the main purpose of research methods?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q1" value="a"> To collect and analyze data.</div>
+                <div class="answer"><input type="radio" name="q1" value="b"> To write a thesis paper.</div>
+                <div class="answer"><input type="radio" name="q1" value="c"> To read books.</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <label>2. What is the first step in the research process?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q2" value="a"> Literature Review</div>
+                <div class="answer"><input type="radio" name="q2" value="b"> Define the problem</div>
+                <div class="answer"><input type="radio" name="q2" value="c"> Hypothesis Testing</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <label>3. What type of data is collected through surveys?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q3" value="a"> Qualitative</div>
+                <div class="answer"><input type="radio" name="q3" value="b"> Quantitative</div>
+                <div class="answer"><input type="radio" name="q3" value="c"> Both</div>
+            </div>
+        <div class="question">
+            <label>4. What is the main purpose of the literature review?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q4" value="a"> To identify gaps in the literature.</div>
+                <div class="answer"><input type="radio" name="q4" value="b"> To justify the research.</div>
+                <div class="answer"><input type="radio" name="q4" value="c"> To summarize the research.</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <label>5. What is a hypothesis?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q5" value="a"> A statement that is believed to be true.</div>
+                <div class="answer"><input type="radio" name="q5" value="b"> A statement that is testable.</div>
+                <div class="answer"><input type="radio" name="q5" value="c"> A statement that is proven.</div>
+            </div>\
+        <h2>Section 2: Research Methods</h2>
+
+        <div class="question">
+            <label>6. What is the purpose of a pilot study?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q6" value="a"> To test the research design.</div>
+                <div class="answer"><input type="radio" name="q6" value="b"> To test the data collection tool.</div>
+                <div class="answer"><input type="radio" name="q6" value="c"> To test the sample size.</div>
+            </div>
+        </div>
+
+        <div class="question">
+            <label>7. What is the purpose of a control group?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q7" value="a"> To provide a comparison to the treatment group.</div>
+                <div class="answer"><input type="radio" name="q7" value="b"> To provide a random sample of the population.</div>
+                <div class="answer"><input type="radio" name="q7" value="c"> To provide a sample of the population.</div>
+            </div>
+        </div>
+        <div class="question">
+            <label>8. What is the purpose of a survey?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q8" value="a"> To collect data.</div>
+                <div class="answer"><input type="radio" name="q8" value="b"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q8" value="c"> To summarize data.</div>
+            </div>
+
+        <div class="question">
+            <label>9. What is the purpose of a study?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q9" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q9" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q9" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>10. What is the purpose of an experiment?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q10" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q10" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q10" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>11. What is the purpose of a study design?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q11" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q11" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q11" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>12. What is the purpose of an analysis?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q12" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q12" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q12" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>13. What is the purpose of a hypothesis?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q13" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q13" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q13" value="c"> To collect data.</div>
+            </div>
+
+            <h2>Section 3: Interpretation of Results</h2>
+
+        <div class="question">
+            <label>14. What is the purpose of a p-value?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q14" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q14" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q14" value="c"> To collect data.</div>
+            </div>
+            
+
+        <div class="question">
+            <label>15. What is the purpose of a confidence interval?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q15" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q15" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q15" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>16. What is the purpose of a hypothesis test?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q16" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q16" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q16" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>17. What is the purpose of a confidence interval?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q17" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q17" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q17" value="c"> To collect data.</div>
+            </div>
+
+            <h2>Section 4: Reporting and Presentation</h2>
+
+        <div class="question">
+            <label>18. What is the purpose of a report?</label><br>
+
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q18" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q18" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q18" value="c"> To collect data.</div>
+            </div>
+
+        <div class="question">
+            <label>19. What is the purpose of a presentation?</label><br>
+            <div class="answers">
+                <div class="answer"><input type="radio" name="q19" value="a"> To test hypotheses.</div>
+                <div class="answer"><input type="radio" name="q19" value="b"> To summarize data.</div>
+                <div class="answer"><input type="radio" name="q19" value="c"> To collect data.</div>
+
+                <div class="question">
+                    <label>20. What is the purpose of a chart?</label><br>
+                    <div class="answers">
+                        <div class="answer"><input type="radio" name="q20" value="a"> To test hypotheses.</div>
+                        <div class="answer"><input type="radio" name="q20" value="b"> To summarize data.</div>
+                        <div class="answer"><input type="radio" name="q20" value="c"> To collect data.</div>
+                    </div>
+
+                <div class="question">
+                    <label>21. What is the purpose of a table?</label><br>
+                    <div class="answers">
+                        <div class="answer"><input type="radio" name="q21" value="a"> To test hypotheses.</div>
+                        <div class="answer"><input type="radio" name="q21" value="b"> To summarize data.</div>
+            </div>
+        </div>
+        </div>
+        </div>
+
+        <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+    </form>
+
+    <div id="result" class="result"></div>
+    <button class="restart-btn" onclick="restartQuiz()">Back to Top</button>
+    <button class="home-btn" onclick="window.location.href='index.html'">Back to Home</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    let timeLeft = 60 * 60; // 60 minutes
+    let timer = document.getElementById('timer');
+    let studentName = '';
+    let timerInterval;
+
+    function updateTimer() {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        timer.innerHTML = `Time Left: ${minutes}:${seconds}`;
+        if (timeLeft > 0) {
+            timeLeft--;
+        } else {
+            clearInterval(timerInterval);
+            submitQuiz();
+        }
+    }
+
+    function startQuiz() {
+        studentName = document.getElementById('studentName').value.trim();
+        if (studentName) {
+            document.getElementById('startContainer').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            timerInterval = setInterval(updateTimer, 1000);
+        } else {
+            alert('Please enter your name to start.');
+        }
+    }
+
+    function submitQuiz() {
+        let answers = {
+            q1: 'a',
+            q2: 'b',
+            q3: 'b'
+        };
+        let score = 0;
+        let totalQuestions = Object.keys(answers).length;
+
+        for (let i = 1; i <= totalQuestions; i++) {
+            let question = document.querySelector(`input[name="q${i}"]:checked`);
+            if (question && question.value === answers[`q${i}`]) {
+                score++;
+            }
+        }
+
+        let result = document.getElementById('result');
+        result.style.display = 'block';
+        result.innerHTML = `Your score is ${score} out of ${totalQuestions}.`;
+
+        if (score === totalQuestions) {
+            result.classList.add('correct');
+            result.classList.remove('incorrect');
+            result.innerHTML += " Congratulations! You passed the test. Your answers were correct and you completed the test within the given time.";
+        } else if (score > 0) {
+            result.classList.remove('correct');
+            result.classList.add('incorrect');
+            result.innerHTML += ` You did not pass. You answered ${score} out of ${totalQuestions} questions correctly. Try again.`;
+        } else {
+            result.classList.remove('correct');
+            result.classList.add('incorrect');
+            result.innerHTML += " You did not pass. You did not answer any of the questions correctly. Try again.";
+        }
+
+        generatePDF(score, totalQuestions);
+    }
+
+    function generatePDF(score, totalQuestions) {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.text(`Student: ${studentName}`, 10, 10);
+        doc.text(`Score: ${score} out of ${totalQuestions}`, 10, 20);
+
+        let comment = score === totalQuestions 
+            ? 'Excellent work! You passed the test.' 
+            : 'You did not pass. Try reviewing the material and retaking the test.';
+        
+        doc.text(`Comment: ${comment}`, 10, 30);
+        doc.save(`${studentName}_test_results.pdf`);
+    }
+
+    function restartQuiz() {
+        clearInterval(timerInterval);
+        timeLeft = 60 * 60; // reset time
+        document.getElementById('quizForm').reset();
+        document.getElementById('result').style.display = 'none';
+        document.getElementById('quizContainer').classList.add('hidden');
+        document.getElementById('startContainer').classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
+
+

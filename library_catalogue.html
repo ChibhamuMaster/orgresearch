@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Database</title>
+    <!-- CSS Stylesheet Link -->
+    <link rel="stylesheet" href="Main library styles.css">
+    <!-- JavaScript Link -->
+    <script src="Main library scripts.js" defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        </div>
+        <div class="header-content">
+            <h1>Research Database</h1>
+            <p>Explore academic research from around the world</p>
+        </div>
+        <div class="user-options">
+            <a href="profile.html">My Account</a>
+            <a href="help.html">Help</a>
+            <a href="index.html">Sign Out</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main>
+        <!-- Search Bar -->
+        <section class="search-bar">
+            <form action="search_results.html" method="GET">
+                <input type="text" name="query" placeholder="Search articles, journals, authors..." aria-label="Search">
+                <button type="submit">Search</button>
+            </form>
+            <div class="search-options">
+                <label>
+                    <input type="checkbox" name="full_text_only"> Full Text Only
+                </label>
+                <label>
+                    <input type="checkbox" name="peer_reviewed_only"> Peer-Reviewed Journals
+                </label>
+            </div>
+        </section>
+
+        <!-- Filters Sidebar -->
+        <aside class="filters">
+            <h2>Filters</h2>
+            <div class="filter-group">
+                <h3>Publication Date</h3>
+                <label>
+                    From <input type="date" name="start_date">
+                </label>
+                <label>
+                    To <input type="date" name="end_date">
+                </label>
+            </div>
+            <div class="filter-group">
+                <h3>Subject</h3>
+                <select name="subject">
+                    <option value="all">All Subjects</option>
+                    <option value="science">Science</option>
+                    <option value="literature">Literature</option>
+                    <option value="history">History</option>
+                    <option value="business">Business</option>
+                </select>
+            </div>
+            <button type="submit">Apply Filters</button>
+        </aside>
+
+        <!-- Search Results Section -->
+        <section class="results">
+            <h2>Search Results</h2>
+            <p>Showing results for <strong>"Keyword Search"</strong></p>
+            
+            <!-- Example Result Item -->
+            <article class="result-item">
+                <h3><a href="article_details.html">Title of the First Research Article</a></h3>
+                <p class="author">Author(s): John Doe, Jane Smith</p>
+                <p class="publication">Published in Journal of Example Studies, 2023</p>
+                <p class="snippet">This is a brief description or snippet of the article's abstract, allowing users to preview its content...</p>
+                <div class="result-actions">
+                    <button onclick="viewArticle()">View Full Text</button>
+                    <button onclick="addToFavorites()">Add to Favorites</button>
+                    <button onclick="exportCitation()">Export Citation</button>
+                </div>
+            </article>
+
+            <!-- Example of Additional Result Items -->
+            <article class="result-item">
+                <h3><a href="article_details.html">Title of the Second Research Article</a></h3>
+                <p class="author">Author(s): Alice Brown, Michael Green</p>
+                <p class="publication">Published in Example Journal of Business, 2022</p>
+                <p class="snippet">This is a brief description or snippet of the article's abstract...</p>
+                <div class="result-actions">
+                    <button onclick="viewArticle()">View Full Text</button>
+                    <button onclick="addToFavorites()">Add to Favorites</button>
+                    <button onclick="exportCitation()">Export Citation</button>
+                </div>
+            </article>
+            
+            <!-- Pagination Controls -->
+            <div class="pagination">
+                <a href="#" class="prev">Previous</a>
+                <span class="page-number">Page 1 of 10</span>
+                <a href="#" class="next">Next</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Article Details Section (Hidden Initially, Populated When an Article is Selected) -->
+    <section class="article-details">
+        <h2>Article Title</h2>
+        <p class="author">Author(s): John Doe, Jane Smith</p>
+        <p class="publication">Published in Journal of Example Studies, 2023</p>
+        <h3>Abstract</h3>
+        <p>This is the abstract of the selected article, giving an in-depth preview of the content...</p>
+        <h3>Full Text</h3>
+        <p>The full text or a significant portion of it will appear here when accessed.</p>
+        <div class="article-actions">
+            <button onclick="exportCitation()">Export Citation</button>
+            <button onclick="downloadPDF()">Download PDF</button>
+            <button onclick="addToFavorites()">Add to Favorites</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Research Database | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+        <p>Powered by <a href="https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://na.linkedin.com/in/benjunior-takunda-chibhamu-48165a301&ved=2ahUKEwj09KSA09iJAxV6QUEAHb5vO60QFnoECCAQAQ&usg=AOvVaw3FQmrkF6XlgqFHoeZrjZ_o">Benjunior Chibhamu</a></p>
+    </footer>
+</body>
+</html>
+
